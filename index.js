@@ -7,12 +7,12 @@ async function run() {
       const generator = core.getInput('generator');
       var genstr = '';
       if (generator != null && !(generator == '')) {
-	  console.log('requested cmake generator is ${generator}');
-	  genstr = '-G ${generator}'
+	  console.log(`requested cmake generator is ${generator}`);
+	  genstr = `-G ${generator}`
       } else {
 	  console.log('using default cmake generator');
       }
-      exec("cmake ${genstr} .", (err, stdout, stderr) => {
+      exec(`cmake ${genstr} .`, (err, stdout, stderr) => {
 	  console.log("cmake configuration complete\n");
       }) ;
   } 
