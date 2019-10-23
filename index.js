@@ -14,6 +14,8 @@ async function run() {
       }
       exec(`cmake ${genstr} .`, (err, stdout, stderr) => {
 	  console.log("cmake configuration complete\n");
+	  console.log("stdout: " + stdout);
+	  console.log("stderr: " + stderr);
       }) ;
   } 
   catch (error) {
