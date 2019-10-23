@@ -8,7 +8,7 @@ async function run() {
       var genstr = '';
       if (generator != null && !(generator == '')) {
 	  console.log(`requested cmake generator is ${generator}`);
-	  genstr = `"-G ${generator}"`
+	  genstr = `-G "${generator}"`
       } else {
 	  console.log('using default cmake generator');
       }
