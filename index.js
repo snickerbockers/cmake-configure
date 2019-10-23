@@ -6,7 +6,7 @@ async function run() {
   try {
       const generator = core.getInput('generator');
       var genstr = '';
-      if (generator != null && generator != '') {
+      if (generator != null && !(generator == '')) {
 	  console.log('requested cmake generator is ${generator}');
 	  genstr = '-G ${generator}'
       } else {
