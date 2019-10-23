@@ -1,5 +1,9 @@
 name: 'cmake-configure'
 description: 'use cmake to generate build files'
+inputs:
+  generator:
+    description: 'which CMake generator to run'
+    default: ''
 runs:
   using: 'node12'
   main: 'index.js'

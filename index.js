@@ -4,7 +4,15 @@ const { exec } = require('child_process');
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-      exec("cmake .", (err, stdout, stderr) => {
+      const generator = core.getInput('generator');
+      var genstr = '';
+      if (generator != null && generator != '') {
+	  console.log('requested cmake generator is ${generator}');
+	  genstr = '-G ${generator}'
+      } else {
+	  console.log('using default cmake generator');
+      }
+      exec("cmake ${genstr} .", (err, stdout, stderr) => {
 	  console.log("cmake configuration complete\n");
       }) ;
   } 
